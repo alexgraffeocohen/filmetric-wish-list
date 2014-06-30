@@ -1,30 +1,114 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.good {
+  color: green;
 }
 
-.menu:before {
-  content: "[";
+.ok {
+  color: #f0ad4e;
 }
 
-.menu:after {
-  content: "]";
+.bad {
+  color: #d44950;
 }
 
-.menu > li {
-  display: inline;
+.clearfix:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+   }
+
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+/* RT COPIED STYLES */
+
+body {
+  background: #a8d5f9 url("../img/bg-clouds.png") no-repeat center top;
+  position: relative;
+  font-family: Arial;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+.header {
+  background: linear-gradient(to bottom,#499200 0,#499200 25%,#2b7200 100%);
+  position: relative;
+  z-index: 65530;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 70px;
+  margin: 0 auto;
+  color: #fff;
+  width: 1200px;
+  overflow: visible;
 }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+  .rt-logo {
+    width: 147px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    top: 15px;
+    left: 10px;
+    height: 40px;
+    background: transparent url('../img/rtlogo.png') no-repeat 0 0;
+    overflow: hidden;
+  }
+
+  .header a {
+    color: #fded00;
+    font-weight: bold;
+    margin-left: 20px;
+    vertical-align: text-bottom;
+  }
+
+/*MOVIE-LIST*/
+
+#movie-list-page h2 {
+  text-align: center;
 }
+
+#movie-list-page #list {
+  margin: 50px 150px;
+  background-color: white;
+}
+
+#movie-list-page #list #add-modal {
+  top: 200px;
+}
+
+#movie-list-page .movie {
+  padding-left: 50px;
+  padding-top: 30px;
+  height: 300px;
+  width: 350px;
+  float: left;
+}
+
+  #movie-list-page .movie .poster {
+    width: 150px;
+    height: 200px;
+    float: left;
+  }
+
+  #movie-list-page .movie .info-box {
+    margin-top: 50px;
+    margin-left: 120px;
+    font-size: 1.25em;
+  }
+
+  #movie-list-page .movie .info-box ul {
+    list-style-type: none;
+  }
+
+  .good-rt-img {
+    width: 20px;
+    margin-bottom: 10px;
+  }
+  .bad-rt-img {
+    width: 30px;
+    margin-bottom: 5px;
+  }
