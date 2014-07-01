@@ -39,15 +39,16 @@ angular.module('myApp.controllers', [])
   })
   .controller('MovieFormCtrl', function(){
     this.movie = {
-      genres:["Action", "Adventure"],
-      actors:["Brad Pitt", "Angelina Jolie"],
-      directors:["Martin Scorcese"],
-      posterLink: "http://content9.flixster.com/movie/11/17/28/11172839_ori.jpg"
+      //genres:["Action", "Adventure"],
+      //actors:["Brad Pitt", "Angelina Jolie"],
+      //directors:["Martin Scorcese"],
+      //posterLink: "http://content9.flixster.com/movie/11/17/28/11172839_ori.jpg"
     };
     this.addToList = function(form, list){
       list.push(this.movie);
-      this.movie.title = "";
+      this.movie = {};
       form.$setPristine();
+      $('#add-modal').modal('hide');
     };
   });
 var movies = [
