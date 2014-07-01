@@ -1,0 +1,25 @@
+<section id="movie-preview" class="clearfix">
+  <aside id="preview-poster" class="col-sm-5">
+    <img class="poster-thumbnail" src="{{formCtrl.movie.posterLink}}">
+  </aside>
+  <div id="preview-info" class="col-sm-6">
+    <h2>{{formCtrl.movie.title}}</h2>
+    <br>
+    <h4>Info</h4>
+    <ul>
+      <li>Critics Score: {{formCtrl.movie.criticsScore}}</li>
+      <li>Audience Score: {{formCtrl.movie.audienceScore}}</li>
+      <li>Filmetric: {{formCtrl.movie.filmetric}}</li>
+      <li>Director: {{formCtrl.movie.directors[0]}}</li>
+    </ul>
+    <h4>Actors</h4>
+    <ul>
+      <li ng-repeat="actor in formCtrl.movie.actors">{{actor}}</li>
+    </ul>
+    <h4>Genres</h4>
+    <ul>
+      <li ng-repeat="genre in formCtrl.movie.genres">{{genre}}</li>
+    </ul>
+    <br><br>
+  </div>
+</section>

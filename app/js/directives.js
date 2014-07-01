@@ -9,10 +9,4 @@ angular.module('myApp.directives', [])
       restrict: 'E',
       templateUrl: 'partials/form.html'
     }
-  })
-  .directive('formContent', function(){
-    return {
-      restrict: 'E',
-      templateUrl: 'partials/form-content.html'
-    }
   });

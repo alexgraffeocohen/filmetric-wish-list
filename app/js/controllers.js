@@ -3,8 +3,9 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('MovieDisplayController', function(){
+  .controller('MovieListController', function(){
     this.movies = movies;
+    this.showForm = false;
     this.calcQuality = function(movie){
       var average = (movie.critics_score + movie.audience_score)/2;
       if(average > 75){

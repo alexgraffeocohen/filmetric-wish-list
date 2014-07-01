@@ -17,24 +17,24 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
-  <body ng-controller="MovieDisplayController as displayCtrl">
+  <body ng-controller="MovieListController as listCtrl">
     <div id="movie-list-page">
       <div class="header">
         <a class="rt-logo" href="index.html"></a>
         <a class="nav-link" href="index.html">My List</a>
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#add-modal">Add to List</a>
         <a class="nav-link" href="http://filmetric.com/movies/browse">Discover</a>
       </div>
       <div id="list" class="clearfix">
         <h2 class="page-title">My List</h2>
+        <a href="#" class="add-link" ng-click="listCtrl.showForm = !listCtrl.showForm"><h4>{{!listCtrl.showForm ? "add movie" : "cancel"}}</h4></a>
         <add-movie-form></add-movie-form>
-        <div class="movie" ng-repeat="m in displayCtrl.movies">
+        <div class="movie" ng-repeat="m in listCtrl.movies">
           <a href="{{m.rt_link}}"><img alt="poster" class="poster-thumbnail" ng-src="{{m.poster_link}}"></a>
           <div class="info-box">
             <ul>
-              <li><img alt="critic image" class="{{displayCtrl.isGoodImg(m.critics_score)}}" src="{{displayCtrl.criticsImg(m.critics_score)}}"> {{m.critics_score}}%</li>
-              <li><img alt="audience image" class="{{displayCtrl.isGoodImg(m.audience_score)}}" src="{{displayCtrl.audienceImg(m.audience_score)}}"> {{m.audience_score}}%</li>
-              <li>Filmetric: <span class="{{displayCtrl.calcQuality(m)}}">{{m.filmetric}}</span></li>
+              <li><img alt="critic image" class="{{listCtrl.isGoodImg(m.critics_score)}}" src="{{listCtrl.criticsImg(m.critics_score)}}"> {{m.critics_score}}%</li>
+              <li><img alt="audience image" class="{{listCtrl.isGoodImg(m.audience_score)}}" src="{{listCtrl.audienceImg(m.audience_score)}}"> {{m.audience_score}}%</li>
+              <li>Filmetric: <span class="{{listCtrl.calcQuality(m)}}">{{m.filmetric}}</span></li>
             </ul>
           </div>
         </div>

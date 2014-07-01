@@ -72,7 +72,7 @@ body {
   height: 200px;
 }
 
-#movie-list-page .page-title {
+#movie-list-page .page-title, #movie-list-page .add-link {
   text-align: center;
 }
 
