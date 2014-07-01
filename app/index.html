@@ -26,10 +26,10 @@
         <a class="nav-link" href="http://filmetric.com/movies/browse">Discover</a>
       </div>
       <div id="list" class="clearfix">
-        <h2>My List</h2>
+        <h2 class="page-title">My List</h2>
         <add-movie-form></add-movie-form>
         <div class="movie" ng-repeat="m in displayCtrl.movies">
-          <a href="{{m.rt_link}}"><img alt="poster" class="poster" ng-src="{{m.poster_link}}"></a>
+          <a href="{{m.rt_link}}"><img alt="poster" class="poster-thumbnail" ng-src="{{m.poster_link}}"></a>
           <div class="info-box">
             <ul>
               <li><img alt="critic image" class="{{displayCtrl.isGoodImg(m.critics_score)}}" src="{{displayCtrl.criticsImg(m.critics_score)}}"> {{m.critics_score}}%</li>

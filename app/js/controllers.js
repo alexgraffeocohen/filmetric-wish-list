@@ -36,8 +36,10 @@ angular.module('myApp.controllers', [])
         return "img/spilled.png";
       }
     };
+  })
+  .controller('MovieFormCtrl', function(){
+    this.movie = {genres:["Action", "Adventure"], actors:["Brad Pitt", "Angelina Jolie"], directors:["Martin Scorcese"], posterLink: "http://content9.flixster.com/movie/11/17/28/11172839_ori.jpg"};
   });
-
 var movies = [
   {
     title: "Her",

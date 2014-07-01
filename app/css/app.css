@@ -67,9 +67,24 @@ body {
 
 /*MOVIE-LIST*/
 
-#movie-list-page h2 {
+#movie-list-page .poster-thumbnail {
+  width: 150px;
+  height: 200px;
+}
+
+#movie-list-page .page-title {
   text-align: center;
 }
+
+  #movie-list-page form #preview-poster {
+    float: right;
+    top: 25px;
+  }
+
+  #movie-list-page form #preview-info li {
+    list-style-type: none;
+    margin-left: -25px;
+  }
 
 #movie-list-page #list {
   margin: 50px 150px;
@@ -77,7 +92,7 @@ body {
 }
 
 #movie-list-page #list #add-modal {
-  top: 200px;
+  top: 40px;
 }
 
 #movie-list-page .movie {
@@ -88,9 +103,7 @@ body {
   float: left;
 }
 
-  #movie-list-page .movie .poster {
-    width: 150px;
-    height: 200px;
+  #movie-list-page .movie .poster-thumbnail {
     float: left;
   }
 
