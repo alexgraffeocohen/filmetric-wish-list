@@ -38,19 +38,19 @@ angular.module('myApp.controllers', [])
       }
     };
   })
-  .controller('MovieFormCtrl', function(){
-    this.movie = {
-      //genres:["Action", "Adventure"],
-      //actors:["Brad Pitt", "Angelina Jolie"],
-      //directors:["Martin Scorcese"],
-      //posterLink: "http://content9.flixster.com/movie/11/17/28/11172839_ori.jpg"
+  .controller('SearchMovieCtrl', [ '$http', function($http){
+    this.movieTitle = "";
+    this.key = "4n59g6mbwkfb3ptjjqh9dmdc";
+    this.options = [];
+    this.search = function(){
+      var url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=" + this.key + "&q=" + this.movieTitle;
+      $http.get(url).success(function(data){
+        console.log(data);
+      });
     };
-    this.addToList = function(form, list){
-      list.push(this.movie);
-      this.movie = {};
-      form.$setPristine();
-      $('#add-modal').modal('hide');
-    };
+  }])
+  .controller('AddMovieCtrl', function(){
+    this.options = [];
   });
 var movies = [
   {
