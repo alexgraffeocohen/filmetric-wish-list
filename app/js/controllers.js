@@ -40,16 +40,18 @@ angular.module('myApp.controllers', [])
   })
   .controller('SearchMovieCtrl', [ 'searchService', function(searchService){
     this.searchSubmitted = false;
-    this.submitted = false;
     this.movieTitle = "";
     this.search = function(){
       searchService.search(this.movieTitle);
       this.options = searchService.movieOptions();
-      console.log(this.options);
     };
+    this.selectOption = function(option){
+      this.userChoice = option;
+    };
+    this.addToList = function(movie, list){
+     list.push(movie);
+    }
   }])
-  .controller('AddMovieCtrl', [ 'searchService', function(searchService){
-  }]);
 var movies = [
   {
     title: "Her",

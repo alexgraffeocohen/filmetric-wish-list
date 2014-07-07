@@ -1,5 +1,5 @@
-<div id="movie-forms" ng-controller="SearchMovieCtrl as searchCtrl">
-  <form name="searchMovie" id="search-form' class="form-inline" ng-show="listCtrl.showForm" ng-submit="searchCtrl.search();">
+<div id="movie-forms" ng-controller="SearchMovieCtrl as searchCtrl" ng-show="listCtrl.showForm">
+  <form name="searchMovie" id="search-form' class="form-inline" ng-submit="searchCtrl.search();">
     <label for="title">Title:</label>
     <input type="text" id="title" ng-model="searchCtrl.movieTitle">
     <button type="submit" ng-click="searchCtrl.searchSubmitted = true" class="btn btn-primary" id="save-movie-btn">Search</button>
@@ -8,35 +8,34 @@
   <section id='movie-options' ng-show="searchCtrl.searchSubmitted">
     <p>Which movie do you want to add?</p>
     <ul id='movie-options'>
-      <li ng-repeat='option in searchCtrl.options'><a href="#">{{option.title}}</a></li>
+      <li ng-repeat='option in searchCtrl.options'><a href="#" ng-click="searchCtrl.selectOption(option)">{{option.title}}</a></li>
     </ul>
   </section>
 
-  <section id="movie-preview" ng-show="searchCtrl.searchSubmitted" class="clearfix">
+  <section id="movie-preview" ng-show="searchCtrl.userChoice" class="clearfix">
     <aside id="preview-poster" class="col-sm-5">
-      <img class="poster-thumbnail" src="{{formCtrl.movie.posterLink}}">
+      <img class="poster-thumbnail" src="{{searchCtrl.userChoice.poster_link}}">
     </aside>
     <div id="preview-info" class="col-sm-6">
-      <h2>{{formCtrl.movie.title}}</h2>
+      <h2><a href="{{searchCtrl.userChoice.rt_link}}">{{searchCtrl.userChoice.title}}</a></h2>
       <br>
       <h4>Info</h4>
       <ul>
-        <li>Critics Score: {{formCtrl.movie.criticsScore}}</li>
-        <li>Audience Score: {{formCtrl.movie.audienceScore}}</li>
-        <li>Filmetric: {{formCtrl.movie.filmetric}}</li>
-        <li>Director: {{formCtrl.movie.directors[0]}}</li>
+        <li>Critics Score: {{searchCtrl.userChoice.critics_score}}</li>
+        <li>Audience Score: {{searchCtrl.userChoice.audience_score}}</li>
+        <li>Filmetric: {{searchCtrl.userChoice.filmetric}}</li>
+        <li>Director: {{searchCtrl.userChoice.directors[0]}}</li>
       </ul>
       <h4>Actors</h4>
       <ul>
-        <li ng-repeat="actor in formCtrl.movie.actors">{{actor}}</li>
+        <li ng-repeat="actor in searchCtrl.userChoice.actors">{{actor}}</li>
       </ul>
       <h4>Genres</h4>
       <ul>
-        <li ng-repeat="genre in formCtrl.movie.genres">{{genre}}</li>
+        <li ng-repeat="genre in searchCtrl.userChoice.genres">{{genre}}</li>
       </ul>
       <br><br>
-      <button type="submit" class="btn btn-primary" id="save-movie-btn">Save Movie</button>
-      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-primary" id="add-movie-btn" ng-click="searchCtrl.addToList(searchCtrl.userChoice, listCtrl.movies); listCtrl.showForm = false">Add Movie</button>
     </div>
   </section>
 
