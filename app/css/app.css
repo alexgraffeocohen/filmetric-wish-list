@@ -75,17 +75,23 @@ body {
 #movie-list-page .page-title, #movie-list-page .add-link {
   text-align: center;
 }
+
   #movie-list-page #movie-options {
     margin-top: 10px;
   }
 
-  #movie-list-page #movie-options li {
-    list-style-type: none;
-    display: inline-block;
-    margin-left: 10px;
+    #movie-list-page #movie-options li {
+      list-style-type: none;
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+  #movie-list-page #movie-preview #preview-poster {
+    float: right;
+    top: 25px;
   }
 
-  #movie-list-page form #preview-info li {
+  #movie-list-page #movie-preview #preview-info li {
     list-style-type: none;
     margin-left: -25px;
   }

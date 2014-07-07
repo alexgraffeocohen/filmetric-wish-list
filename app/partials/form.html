@@ -8,11 +8,11 @@
   <section id='movie-options' ng-show="searchCtrl.searchSubmitted">
     <p>Which movie do you want to add?</p>
     <ul id='movie-options'>
-      <li ng-repeat='option in searchCtrl.options'><a>{{option.title}}</a></li>
+      <li ng-repeat='option in searchCtrl.options'><a href="#">{{option.title}}</a></li>
     </ul>
   </section>
 
-  <section id="movie-preview" class="clearfix" ng-show="formCtrl.movie.title">
+  <section id="movie-preview" ng-show="searchCtrl.searchSubmitted" class="clearfix">
     <aside id="preview-poster" class="col-sm-5">
       <img class="poster-thumbnail" src="{{formCtrl.movie.posterLink}}">
     </aside>
