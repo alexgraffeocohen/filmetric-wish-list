@@ -1,11 +1,22 @@
-<form name="searchMovie" class="form-inline" ng-show="listCtrl.showForm" ng-controller="SearchMovieCtrl as searchCtrl" ng-submit="searchCtrl.search(AddMovieCtrl)">
-  <label for="title">Title:</label>
-  <input type="text" id="title" ng-model="searchCtrl.movieTitle">
+<div id="movie-forms" ng-controller="SearchMovieCtrl as searchCtrl">
+  <form name="searchMovie" id="search-form' class="form-inline" ng-show="listCtrl.showForm" ng-submit="searchCtrl.search();">
+    <label for="title">Title:</label>
+    <input type="text" id="title" ng-model="searchCtrl.movieTitle">
+    <button type="submit" ng-click="searchCtrl.searchSubmitted = true" class="btn btn-primary" id="save-movie-btn">Search</button>
+  </form>
 
-  <button type="submit" class="btn btn-primary" id="save-movie-btn">Search</button>
-</form>
+  <section id='movie-options' ng-show="searchCtrl.searchSubmitted">
+    <p>Which movie do you want to add?</p>
+    <ul id='movie-options'>
+      <li ng-repeat='option in searchCtrl.options'><a>{{option.title}}</a></li>
+    </ul>
+  </section>
 
-<form name="addMovie" ng-show="searchCtrl.options" ng-controller="AddMovieCtrl as addCtrl" ng-submit="addCtrl.addToList()">
-  <!--<movie-preview></movie-preview>-->
-</form>
+  <!--<form name="addMovie" ng-show="searchCtrl.searchSubmitted" ng-controller="AddMovieCtrl as addCtrl" ng-submit="addCtrl.addToList()">-->
+    <!--<ul>-->
+      <!--<li ng-repeat='option in searchCtrl.options'>{{option.title}}</li>-->
+    <!--</ul>-->
+    <!--[><movie-preview></movie-preview><]-->
+  <!--</form>-->
+</div>
 
