@@ -12,6 +12,34 @@
     </ul>
   </section>
 
+  <section id="movie-preview" class="clearfix" ng-show="formCtrl.movie.title">
+    <aside id="preview-poster" class="col-sm-5">
+      <img class="poster-thumbnail" src="{{formCtrl.movie.posterLink}}">
+    </aside>
+    <div id="preview-info" class="col-sm-6">
+      <h2>{{formCtrl.movie.title}}</h2>
+      <br>
+      <h4>Info</h4>
+      <ul>
+        <li>Critics Score: {{formCtrl.movie.criticsScore}}</li>
+        <li>Audience Score: {{formCtrl.movie.audienceScore}}</li>
+        <li>Filmetric: {{formCtrl.movie.filmetric}}</li>
+        <li>Director: {{formCtrl.movie.directors[0]}}</li>
+      </ul>
+      <h4>Actors</h4>
+      <ul>
+        <li ng-repeat="actor in formCtrl.movie.actors">{{actor}}</li>
+      </ul>
+      <h4>Genres</h4>
+      <ul>
+        <li ng-repeat="genre in formCtrl.movie.genres">{{genre}}</li>
+      </ul>
+      <br><br>
+      <button type="submit" class="btn btn-primary" id="save-movie-btn">Save Movie</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+    </div>
+  </section>
+
   <!--<form name="addMovie" ng-show="searchCtrl.searchSubmitted" ng-controller="AddMovieCtrl as addCtrl" ng-submit="addCtrl.addToList()">-->
     <!--<ul>-->
       <!--<li ng-repeat='option in searchCtrl.options'>{{option.title}}</li>-->
