@@ -41,10 +41,12 @@ angular.module('myApp.controllers', [])
   .controller('SearchMovieCtrl', [ 'searchService', '$scope', function(searchService, $scope){
     this.searchSubmitted = false;
     this.movieTitle = "";
-    this.search = function(){
+    this.search = function(form){
       searchService.search(this.movieTitle).then(function(movies){
         $scope.options = movies;
       });
+      form.$setPristine();
+      this.movieTitle = "";
     };
     this.selectOption = function(option){
       this.userChoice = option;
