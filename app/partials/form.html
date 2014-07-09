@@ -8,7 +8,7 @@
   <section id='movie-options' ng-show="searchCtrl.searchSubmitted">
     <p>Which movie do you want to add?</p>
     <ul id='movie-options'>
-      <li ng-repeat='option in searchCtrl.options'><a href="#" ng-click="searchCtrl.selectOption(option)">{{option.title}}</a></li>
+      <li ng-repeat='option in options'><a href="#" ng-click="searchCtrl.selectOption(option)">{{option.title}}</a></li>
     </ul>
   </section>
 

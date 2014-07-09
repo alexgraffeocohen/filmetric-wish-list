@@ -38,12 +38,13 @@ angular.module('myApp.controllers', [])
       }
     };
   })
-  .controller('SearchMovieCtrl', [ 'searchService', function(searchService){
+  .controller('SearchMovieCtrl', [ 'searchService', '$scope', function(searchService, $scope){
     this.searchSubmitted = false;
     this.movieTitle = "";
     this.search = function(){
-      searchService.search(this.movieTitle);
-      this.options = searchService.movieOptions();
+      searchService.search(this.movieTitle).then(function(movies){
+        $scope.options = movies;
+      });
     };
     this.selectOption = function(option){
       this.userChoice = option;
