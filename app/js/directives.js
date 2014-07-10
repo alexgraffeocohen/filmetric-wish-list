@@ -9,4 +9,10 @@ angular.module('myApp.directives', [])
       restrict: 'E',
       templateUrl: 'partials/form.html'
     }
+  })
+  .directive('discoverForm', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'partials/discover-form.html'
+    }
   });

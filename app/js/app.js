@@ -18,6 +18,6 @@ angular.module('filmetric', [
 }).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/my-list', {templateUrl: 'partials/list.html', controller: 'MovieListController', controllerAs: 'listCtrl'});
-  $routeProvider.when('/discover', {templateUrl: 'partials/discover.html', controller: 'DiscoveryController', controllerAs: 'discCtrl'});
+  $routeProvider.when('/discover', {templateUrl: 'partials/discover.html', controller: 'DiscoverController', controllerAs: 'discCtrl'});
   $routeProvider.otherwise({redirectTo: '/my-list'});
 }]);

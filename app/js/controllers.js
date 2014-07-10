@@ -55,6 +55,8 @@ angular.module('myApp.controllers', [])
      list.push(movie);
     }
   }])
+  .controller('DiscoverController', function(){
+  });
 var movies = [
   {
     title: "Her",

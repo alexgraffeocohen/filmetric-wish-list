@@ -144,3 +144,32 @@ header {
     width: 30px;
     margin-bottom: 5px;
   }
+
+/*DISCOVER PAGE*/
+
+#search-container {
+  position: relative;
+  margin: auto; }
+  #search-container h1 {
+    text-align: center;
+    font-size: 4em;
+    line-height: 1em; }
+    #search-container h1 small {
+      font-size: 0.5em; }
+  #search-container #search-box {
+    margin: 40px 5px 60px 5px;
+    text-align: center; }
+    #search-container #search-box #categories {
+      margin-right: 5px; }
+    #search-container #search-box #search-button {
+      margin-left: 5px; }
+  #search-container #film-strip {
+    background: url("new-film-background2.png");
+    height: 500px;
+    background-size: 500px 100%; }
+    #search-container #film-strip #poster-thumbnail {
+      position: absolute;
+      height: 292px;
+      width: 217px;
+      border-radius: 14px;
+      margin-top: 104px; }
