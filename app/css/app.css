@@ -80,9 +80,13 @@ header {
   height: 200px;
 }
 
-#movie-list-page .page-title, #movie-list-page .add-link {
+.page-title {
   text-align: center;
-  cursor:pointer;
+}
+
+.add-link {
+  cursor: pointer;
+  text-align: center;
 }
 
   #movie-list-page #movie-options {
@@ -105,13 +109,9 @@ header {
     margin-left: -25px;
   }
 
-#movie-list-page #list {
+#page-content {
   margin: 50px 150px;
   background-color: white;
-}
-
-#movie-list-page #list #add-modal {
-  top: 40px;
 }
 
 #movie-list-page .movie {
