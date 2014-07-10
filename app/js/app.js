@@ -17,7 +17,7 @@ angular.module('filmetric', [
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/my-list', {templateUrl: 'partials/list.html', controller: 'MovieListController', controllerAs: 'listCtrl'});
+  $routeProvider.when('/my-list', {templateUrl: 'partials/my-list.html', controller: 'MovieListController', controllerAs: 'listCtrl'});
   $routeProvider.when('/discover', {templateUrl: 'partials/discover.html', controller: 'DiscoverController', controllerAs: 'discCtrl'});
   $routeProvider.otherwise({redirectTo: '/my-list'});
 }]);

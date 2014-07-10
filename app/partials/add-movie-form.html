@@ -8,7 +8,7 @@
   <section id='movie-options' ng-show="searchCtrl.searchSubmitted">
     <p>Which movie do you want to add?</p>
     <ul id='movie-options'>
-      <li ng-repeat='option in options|limitTo:10'><a href="#" ng-click="searchCtrl.selectOption(option)">{{option.title}}</a></li>
+      <li ng-repeat='option in options|limitTo:10'><a href="" ng-click="searchCtrl.selectOption(option)">{{option.title}}</a></li>
     </ul>
   </section>
 
@@ -38,12 +38,5 @@
       <button class="btn btn-primary" id="add-movie-btn" ng-click="searchCtrl.addToList(searchCtrl.userChoice, listCtrl.movies); listCtrl.showForm = false">Add Movie</button>
     </div>
   </section>
-
-  <!--<form name="addMovie" ng-show="searchCtrl.searchSubmitted" ng-controller="AddMovieCtrl as addCtrl" ng-submit="addCtrl.addToList()">-->
-    <!--<ul>-->
-      <!--<li ng-repeat='option in searchCtrl.options'>{{option.title}}</li>-->
-    <!--</ul>-->
-    <!--[><movie-preview></movie-preview><]-->
-  <!--</form>-->
 </div>
 

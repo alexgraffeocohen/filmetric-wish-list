@@ -80,12 +80,7 @@ header {
   height: 200px;
 }
 
-.page-title {
-  text-align: center;
-}
-
-.add-link {
-  cursor: pointer;
+.page-title, .add-link {
   text-align: center;
 }
 
