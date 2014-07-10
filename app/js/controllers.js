@@ -56,6 +56,9 @@ angular.module('myApp.controllers', [])
     }
   }])
   .controller('DiscoverController', function(){
+  })
+  .controller('DiscoverFormController', function(){
+    this.genres = ['action', 'adventure'];
   });
 var movies = [
   {

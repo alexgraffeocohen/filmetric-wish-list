@@ -142,6 +142,21 @@ header {
 
 /*DISCOVER PAGE*/
 
+.browse-form {
+  font-size: 20px;
+  display: inline-block; }
+
+#movie-options {
+  margin-left: 40px; }
+  #movie-options #notice {
+    margin-left: 217px; }
+  #movie-options .choice {
+    float: left;
+    padding: 5px; }
+    #movie-options .choice .poster-thumbnail {
+      height: 292px;
+      width: 217px; }
+
 #search-container {
   position: relative;
   margin: auto; }
