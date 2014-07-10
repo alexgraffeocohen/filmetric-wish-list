@@ -33,7 +33,7 @@ body {
   font-family: Arial;
 }
 
-.header {
+header {
   background: linear-gradient(to bottom,#499200 0,#499200 25%,#2b7200 100%);
   position: relative;
   z-index: 65530;
@@ -58,11 +58,19 @@ body {
     overflow: hidden;
   }
 
-  .header a {
+  header a {
     color: #fded00;
     font-weight: bold;
     margin-left: 20px;
-    vertical-align: text-bottom;
+  }
+
+  header a:hover {
+    color: #fff;
+  }
+
+  header .nav-link {
+    top: 20px;
+    position: relative;
   }
 
 /*MOVIE-LIST*/
@@ -74,6 +82,7 @@ body {
 
 #movie-list-page .page-title, #movie-list-page .add-link {
   text-align: center;
+  cursor:pointer;
 }
 
   #movie-list-page #movie-options {

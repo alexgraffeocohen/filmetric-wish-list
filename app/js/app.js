@@ -15,9 +15,9 @@ angular.module('filmetric', [
 
   //Remove the header used to identify ajax call  that would prevent CORS from working
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
-});
-//config(['$routeProvider', function($routeProvider) {
-  //$routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-  //$routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  //$routeProvider.otherwise({redirectTo: '/view1'});
-//}]);
+}).
+config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/my-list', {templateUrl: 'partials/list.html', controller: 'MovieListController', controllerAs: 'listCtrl'});
+  $routeProvider.when('/discover', {templateUrl: 'partials/discover.html', controller: 'DiscoveryController', controllerAs: 'discCtrl'});
+  $routeProvider.otherwise({redirectTo: '/my-list'});
+}]);
