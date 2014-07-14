@@ -11,7 +11,7 @@ angular.module('myApp.controllers', [])
     this.searchSubmitted = false;
     this.movieTitle = "";
     this.search = function(form){
-      searchService.search(this.movieTitle).then(function(movies){
+      searchService.movieSearch(this.movieTitle).then(function(movies){
         $scope.options = movies;
       });
       form.$setPristine();
@@ -40,8 +40,8 @@ angular.module('myApp.controllers', [])
       [4,"audiences like a lot more"]
     ];
     this.chosenEval = this.filmetricEvals[0];
-    this.discover = function(evaluation, genre){
-      searchService.discover(evaluation[0], genre.id).then(function(movies){
+    this.discover = function(evaluationID, genreID){
+      searchService.discover(evaluationID, genreID).then(function(movies){
         $scope.options = movies;
       });
     };

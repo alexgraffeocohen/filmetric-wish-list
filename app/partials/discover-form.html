@@ -1,5 +1,5 @@
 <div class="form-group" id="search-box">
-  <form name='discoverMovies' id='discover-form' class='form-inline' ng-submit='discCtrl.discover(discCtrl.chosenEval, discCtrl.chosenGenre)'>
+  <form name='discoverMovies' id='discover-form' class='form-inline' ng-submit='discCtrl.discover(discCtrl.chosenEval[0], discCtrl.chosenGenre.id)'>
     <p class="browse-form"> I want </p>
     <select class='form-control input-lg' ng-model='discCtrl.chosenGenre' ng-options='genre.name for genre in discCtrl.genres'>
     </select>
