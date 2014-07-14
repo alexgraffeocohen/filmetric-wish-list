@@ -3,40 +3,9 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('MovieListController', function(){
+  .controller('WishListController', function(){
     this.movies = movies;
     this.showForm = false;
-    this.calcQuality = function(movie){
-      var average = (movie.critics_score + movie.audience_score)/2;
-      if(average > 75){
-        return "good";
-      }else if(average >= 50 && average <= 75){
-        return "ok";
-      }else if(average < 50){
-        return "bad";
-      }
-    };
-    this.isGoodImg = function(score){
-      if(score > 60){
-        return "good-rt-img";
-      }else {
-        return "bad-rt-img";
-      }
-    };
-    this.criticsImg = function(score){
-      if(score > 60){
-        return "img/fresh.png";
-      }else {
-        return "img/rotten.png";
-      }
-    };
-    this.audienceImg = function(score){
-      if(score > 60){
-        return "img/popcorn.png";
-      }else {
-        return "img/spilled.png";
-      }
-    };
   })
   .controller('SearchMovieCtrl', [ 'searchService', '$scope', function(searchService, $scope){
     this.searchSubmitted = false;

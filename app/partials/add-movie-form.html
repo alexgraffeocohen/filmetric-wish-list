@@ -1,4 +1,4 @@
-<div id="movie-forms" ng-controller="SearchMovieCtrl as searchCtrl" ng-show="listCtrl.showForm">
+<div id="movie-forms" ng-controller="SearchMovieCtrl as searchCtrl" ng-show="wishCtrl.showForm">
   <form name="searchMovie" id="search-form" class="form-inline" ng-submit="searchCtrl.search(searchMovie);">
     <label for="title">Title:</label>
     <input type="text" id="title" ng-model="searchCtrl.movieTitle">
@@ -35,7 +35,7 @@
         <li ng-repeat="genre in searchCtrl.userChoice.genres">{{genre}}</li>
       </ul>
       <br><br>
-      <button class="btn btn-primary" id="add-movie-btn" ng-click="searchCtrl.addToList(searchCtrl.userChoice, listCtrl.movies); listCtrl.showForm = false">Add Movie</button>
+      <button class="btn btn-primary" id="add-movie-btn" ng-click="searchCtrl.addToList(searchCtrl.userChoice, wishCtrl.movies); wishCtrl.showForm = false">Add Movie</button>
     </div>
   </section>
 </div>

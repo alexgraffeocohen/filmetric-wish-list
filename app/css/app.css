@@ -121,24 +121,24 @@ header {
     position: relative;
   }
 
-/*MOVIE-LIST*/
+/*WISH-LIST*/
 
-#movie-list-page #movie-options {
+#wish-list-page #movie-options {
   margin-top: 10px;
 }
 
-#movie-list-page #movie-options li {
+#wish-list-page #movie-options li {
   list-style-type: none;
   display: inline-block;
   margin-left: 10px;
 }
 
-#movie-list-page #movie-preview #preview-poster {
+#wish-list-page #movie-preview #preview-poster {
   float: right;
   top: 25px;
 }
 
-#movie-list-page #movie-preview #preview-info li {
+#wish-list-page #movie-preview #preview-info li {
   list-style-type: none;
   margin-left: -25px;
 }
@@ -148,17 +148,6 @@ header {
 .browse-form {
   font-size: 20px;
   display: inline-block; }
-
-#movie-options {
-  margin-left: 40px; }
-  #movie-options #notice {
-    margin-left: 217px; }
-  #movie-options .choice {
-    float: left;
-    padding: 5px; }
-    #movie-options .choice .poster-thumbnail {
-      height: 292px;
-      width: 217px; }
 
 #search-container {
   position: relative;
@@ -176,13 +165,3 @@ header {
       margin-right: 5px; }
     #search-container #search-box #search-button {
       margin-left: 5px; }
-  #search-container #film-strip {
-    background: url("new-film-background2.png");
-    height: 500px;
-    background-size: 500px 100%; }
-    #search-container #film-strip #poster-thumbnail {
-      position: absolute;
-      height: 292px;
-      width: 217px;
-      border-radius: 14px;
-      margin-top: 104px; }
