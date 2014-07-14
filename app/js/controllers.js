@@ -55,9 +55,8 @@ angular.module('myApp.controllers', [])
      list.push(movie);
     }
   }])
-  .controller('DiscoverController', function(){
-  })
-  .controller('DiscoverFormController', [ 'searchService', '$scope', function(searchService, $scope){
+  .controller('DiscoverController', [ 'searchService', '$scope', function(searchService, $scope){
+    $scope.options = movies;
     this.genres = [
       {name: 'Action', filmetric: 2},
       {name: 'Romance', filmetric: 4},

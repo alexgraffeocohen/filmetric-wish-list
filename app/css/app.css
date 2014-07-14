@@ -1,5 +1,47 @@
 /* COMMON STYLES */
 
+#page-content {
+  margin: 50px 150px;
+  background-color: white;
+}
+
+.movie {
+  padding-left: 50px;
+  padding-top: 30px;
+  height: 300px;
+  width: 350px;
+  float: left;
+}
+
+  .movie .poster-thumbnail {
+    float: left;
+  }
+
+  .movie .info-box {
+    margin-top: 50px;
+    margin-left: 120px;
+    font-size: 1.25em;
+  }
+
+    .movie .info-box ul {
+      list-style-type: none;
+    }
+
+.good-rt-img {
+  width: 20px;
+  margin-bottom: 10px;
+}
+
+.bad-rt-img {
+  width: 30px;
+  margin-bottom: 5px;
+}
+
+.poster-thumbnail {
+  width: 150px;
+  height: 200px;
+}
+
 .page-title, .add-link {
   text-align: center;
 }
@@ -81,66 +123,25 @@ header {
 
 /*MOVIE-LIST*/
 
-#movie-list-page .poster-thumbnail {
-  width: 150px;
-  height: 200px;
+#movie-list-page #movie-options {
+  margin-top: 10px;
 }
 
-  #movie-list-page #movie-options {
-    margin-top: 10px;
-  }
-
-    #movie-list-page #movie-options li {
-      list-style-type: none;
-      display: inline-block;
-      margin-left: 10px;
-    }
-
-  #movie-list-page #movie-preview #preview-poster {
-    float: right;
-    top: 25px;
-  }
-
-  #movie-list-page #movie-preview #preview-info li {
-    list-style-type: none;
-    margin-left: -25px;
-  }
-
-#page-content {
-  margin: 50px 150px;
-  background-color: white;
+#movie-list-page #movie-options li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 10px;
 }
 
-#movie-list-page .movie {
-  padding-left: 50px;
-  padding-top: 30px;
-  height: 300px;
-  width: 350px;
-  float: left;
+#movie-list-page #movie-preview #preview-poster {
+  float: right;
+  top: 25px;
 }
 
-  #movie-list-page .movie .poster-thumbnail {
-    float: left;
-  }
-
-  #movie-list-page .movie .info-box {
-    margin-top: 50px;
-    margin-left: 120px;
-    font-size: 1.25em;
-  }
-
-  #movie-list-page .movie .info-box ul {
-    list-style-type: none;
-  }
-
-  .good-rt-img {
-    width: 20px;
-    margin-bottom: 10px;
-  }
-  .bad-rt-img {
-    width: 30px;
-    margin-bottom: 5px;
-  }
+#movie-list-page #movie-preview #preview-info li {
+  list-style-type: none;
+  margin-left: -25px;
+}
 
 /*DISCOVER PAGE*/
 

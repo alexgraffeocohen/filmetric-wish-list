@@ -1,12 +1,10 @@
-<form name='discoverMovies' class='form-inline' ng-controller='DiscoverFormController as discFormCtrl' ng-submit='discFormCtrl.discover(discFormCtrl.chosenEval, discFormCtrl.chosenGenre)'>
+<form name='discoverMovies' class='form-inline' ng-submit='discCtrl.discover(discCtrl.chosenEval, discCtrl.chosenGenre)'>
   <p class="browse-form"> I want </p>
-  <select class='form-control input-lg' ng-model='discFormCtrl.chosenGenre' ng-options='genre.name for genre in discFormCtrl.genres'>
+  <select class='form-control input-lg' ng-model='discCtrl.chosenGenre' ng-options='genre.name for genre in discCtrl.genres'>
   </select>
   <p class="browse-form"> movies that </p>
-  <select class='form-control input-lg' ng-model='discFormCtrl.chosenEval' ng-options='eval[1] for eval in discFormCtrl.filmetricEvals'>
+  <select class='form-control input-lg' ng-model='discCtrl.chosenEval' ng-options='eval[1] for eval in discCtrl.filmetricEvals'>
   </select>
   <button type='submit' class='btn btn-lg btn-primary' id='browse-button'>Search</button>
 </form>
 <br><br>
-<section id='discover-options'>
-</section>
