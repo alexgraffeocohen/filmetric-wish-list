@@ -1,3 +1,9 @@
+/* COMMON STYLES */
+
+.page-title, .add-link {
+  text-align: center;
+}
+
 .good {
   color: green;
 }
@@ -78,10 +84,6 @@ header {
 #movie-list-page .poster-thumbnail {
   width: 150px;
   height: 200px;
-}
-
-.page-title, .add-link {
-  text-align: center;
 }
 
   #movie-list-page #movie-options {

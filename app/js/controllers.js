@@ -57,9 +57,27 @@ angular.module('myApp.controllers', [])
   }])
   .controller('DiscoverController', function(){
   })
-  .controller('DiscoverFormController', function(){
-    this.genres = ['action', 'adventure'];
-  });
+  .controller('DiscoverFormController', [ 'searchService', '$scope', function(searchService, $scope){
+    this.genres = [
+      {name: 'Action', filmetric: 2},
+      {name: 'Romance', filmetric: 4},
+      {name: 'Mystery', filmetrix: 1}
+    ];
+    this.chosenGenre = this.genres[0];
+    this.filmetricEvals = [
+      [0,"critics like a lot more"],
+      [1,"critics like more"],
+      [2,"critics and audiences like equally"],
+      [3,"audiences like more"],
+      [4,"audiences like a lot more"]
+    ];
+    this.chosenEval = this.filmetricEvals[0];
+    this.discover = function(evaluation, genre){
+      searchService.discover(evaluation[0], genre.id).then(function(movies){
+        $scope.options = movies;
+      });
+    };
+  }]);
 var movies = [
   {
     title: "Her",
