@@ -155,10 +155,7 @@ header {
   text-align: center;
 }
 
-  #search-container #search-box #categories {
+  #discover-page #search-box .categories {
     margin-right: 5px;
-  }
-
-  #search-container #search-box #search-button {
-    margin-left: 5px;
+    width: 300px;
   }

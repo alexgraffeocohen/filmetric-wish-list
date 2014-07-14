@@ -26,20 +26,29 @@ angular.module('myApp.controllers', [])
   }])
   .controller('DiscoverController', [ 'searchService', '$scope', function(searchService, $scope){
     $scope.options = movies;
-    this.genres = [
-      {name: 'Action', filmetric: 2},
-      {name: 'Romance', filmetric: 4},
-      {name: 'Mystery', filmetrix: 1}
-    ];
-    this.chosenGenre = this.genres[0];
-    this.filmetricEvals = [
-      [0,"critics like a lot more"],
-      [1,"critics like more"],
-      [2,"critics and audiences like equally"],
-      [3,"audiences like more"],
-      [4,"audiences like a lot more"]
-    ];
-    this.chosenEval = this.filmetricEvals[0];
+    $scope.genres = [];
+    $scope.filmetricEvals = [];
+    $scope.init = function(){
+      searchService.browse().then(function(data){
+        $scope.genres = data.genres;
+        $scope.filmetricEvals = data.filmetricEvals;
+        $scope.chosenGenre = $scope.genres[0];
+        $scope.chosenEval = $scope.filmetricEvals[0];
+      });
+    };
+    $scope.init();
+    //this.genres = [
+      //{name: 'Action', filmetric: 2},
+      //{name: 'Romance', filmetric: 4},
+      //{name: 'Mystery', filmetrix: 1}
+    //];
+    //this.filmetricEvals = [
+      //[0,"critics like a lot more"],
+      //[1,"critics like more"],
+      //[2,"critics and audiences like equally"],
+      //[3,"audiences like more"],
+      //[4,"audiences like a lot more"]
+    //];
     this.discover = function(evaluationID, genreID){
       searchService.discover(evaluationID, genreID).then(function(movies){
         $scope.options = movies;

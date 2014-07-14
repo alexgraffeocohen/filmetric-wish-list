@@ -17,6 +17,14 @@ angular.module('myApp.services', [])
           });
         return promise;
       },
+      browse: function(){
+        var promise = $http.get('http://localhost:3000/movies/browse.json').
+          then(function(response){
+            console.log(response);
+            return response.data;
+          });
+        return promise;
+      },
       discover: function(evaluationID, genreID){
         var promise = $http.get('http://localhost:3000/movies/discover.json?filmetric_eval=' + evaluationID + '&genre=' + genreID).
           then(function(response){
