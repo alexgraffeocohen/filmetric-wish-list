@@ -145,23 +145,20 @@ header {
 
 /*DISCOVER PAGE*/
 
-.browse-form {
+#discover-page .browse-form {
   font-size: 20px;
-  display: inline-block; }
+  display: inline-block;
+}
 
-#search-container {
-  position: relative;
-  margin: auto; }
-  #search-container h1 {
-    text-align: center;
-    font-size: 4em;
-    line-height: 1em; }
-    #search-container h1 small {
-      font-size: 0.5em; }
-  #search-container #search-box {
-    margin: 40px 5px 60px 5px;
-    text-align: center; }
-    #search-container #search-box #categories {
-      margin-right: 5px; }
-    #search-container #search-box #search-button {
-      margin-left: 5px; }
+#discover-page #search-box {
+  margin: 40px 5px 20px 5px;
+  text-align: center;
+}
+
+  #search-container #search-box #categories {
+    margin-right: 5px;
+  }
+
+  #search-container #search-box #search-button {
+    margin-left: 5px;
+  }

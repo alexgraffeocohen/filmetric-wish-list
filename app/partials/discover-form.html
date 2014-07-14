@@ -1,10 +1,11 @@
-<form name='discoverMovies' id='discover-form' class='form-inline' ng-submit='discCtrl.discover(discCtrl.chosenEval, discCtrl.chosenGenre)'>
-  <p class="browse-form"> I want </p>
-  <select class='form-control input-lg' ng-model='discCtrl.chosenGenre' ng-options='genre.name for genre in discCtrl.genres'>
-  </select>
-  <p class="browse-form"> movies that </p>
-  <select class='form-control input-lg' ng-model='discCtrl.chosenEval' ng-options='eval[1] for eval in discCtrl.filmetricEvals'>
-  </select>
-  <button type='submit' class='btn btn-lg btn-primary' id='browse-button'>Search</button>
-</form>
-<br><br>
+<div class="form-group" id="search-box">
+  <form name='discoverMovies' id='discover-form' class='form-inline' ng-submit='discCtrl.discover(discCtrl.chosenEval, discCtrl.chosenGenre)'>
+    <p class="browse-form"> I want </p>
+    <select class='form-control input-lg' ng-model='discCtrl.chosenGenre' ng-options='genre.name for genre in discCtrl.genres'>
+    </select>
+    <p class="browse-form"> movies that </p>
+    <select class='form-control input-lg' ng-model='discCtrl.chosenEval' ng-options='eval[1] for eval in discCtrl.filmetricEvals'>
+    </select>
+    <button type='submit' class='btn btn-lg btn-primary' id='browse-button'>Search</button>
+  </form>
+</div>
