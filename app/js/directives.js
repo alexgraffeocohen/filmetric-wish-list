@@ -46,13 +46,19 @@ angular.module('myApp.directives', [])
             return "img/spilled.png";
           }
         };
-        this.showMovie = function(movie){
-          $('.movie-in-list').hide();
-          $('discover-form').hide();
-          $('.page-title').text(movie.title);
-          $('.add-link').hide();
+        this.showMovie = function(){
+          this.cleanUpView($location.path());
           $scope.visible = true;
-          console.log(movie);
+        };
+        this.cleanUpView = function(view){
+          $('.movie-in-list').hide();
+          $('.page-title').text($scope.m.title);
+          if(view == '/wish-list'){
+            $('.add-link').hide();
+            $scope.wishCtrl.showForm = false;
+          }else if(view == '/discover'){
+            $('discover-form').hide();
+          }
         };
         this.goBack = function(){
           $scope.visible = false;
