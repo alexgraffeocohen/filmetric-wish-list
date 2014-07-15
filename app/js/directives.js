@@ -49,6 +49,7 @@ angular.module('myApp.directives', [])
         this.showMovie = function(movie){
           $('.movie-in-list').hide();
           $scope.visible = true;
+          console.log(movie);
         };
       }],
       controllerAs: 'listCtrl'

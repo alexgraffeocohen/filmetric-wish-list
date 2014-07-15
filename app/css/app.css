@@ -1,11 +1,23 @@
 /* COMMON STYLES */
 
+.clearfix:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+   }
+
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
 #page-content {
   margin: 50px 150px;
   background-color: white;
-}
-
-movie-display {
 }
 
 .hidden {
@@ -15,6 +27,44 @@ movie-display {
 .visible {
   display: visible;
 }
+
+.page-title, .add-link {
+  text-align: center;
+}
+
+.poster-thumbnail {
+  width: 150px;
+  height: 200px;
+}
+
+.poster {
+  width: 300px;
+  height: 400px;
+}
+
+/* MOVIE DISPLAY */
+
+.movie-display {
+  height: 500px;
+  margin-top: 55px;
+}
+
+  .movie-display .poster-aside {
+    float: right;
+    margin-right: 100px;
+  }
+
+  .movie-display .info {
+    margin-left: 100px;
+    margin-top: -25px;
+  }
+
+    .movie-display .info li {
+      list-style-type: none;
+      margin-left: -25px;
+    }
+
+/* MOVIE LIST */
 
 .movie-in-list {
   padding-left: 50px;
@@ -48,15 +98,6 @@ movie-display {
   margin-bottom: 5px;
 }
 
-.poster-thumbnail {
-  width: 150px;
-  height: 200px;
-}
-
-.page-title, .add-link {
-  text-align: center;
-}
-
 .good {
   color: green;
 }
@@ -68,21 +109,6 @@ movie-display {
 .bad {
   color: #d44950;
 }
-
-.clearfix:after {
-   visibility: hidden;
-   display: block;
-   font-size: 0;
-   content: " ";
-   clear: both;
-   height: 0;
-   }
-
-.clearfix { display: inline-block; }
-/* start commented backslash hack \*/
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
-/* close commented backslash hack */
 
 /* RT COPIED STYLES */
 

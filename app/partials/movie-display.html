@@ -1,1 +1,25 @@
-<p>{{movieCtrl.movie.title}}</p>
+<div class="clearfix movie-display">
+  <aside class="poster-aside">
+    <img class="poster" src="{{movieCtrl.movie.poster_link}}">
+  </aside>
+  <div class="info">
+    <h2>{{movieCtrl.movie.title}}</h2>
+    <br>
+    <h4>Info</h4>
+    <ul>
+      <li>Critics Score: {{movieCtrl.movie.criticsScore}}</li>
+      <li>Audience Score: {{movieCtrl.movie.audienceScore}}</li>
+      <li>Filmetric: {{movieCtrl.movie.filmetric}}</li>
+      <li>Director: {{movieCtrl.movie.directors[0]}}</li>
+    </ul>
+    <h4>Actors</h4>
+    <ul>
+      <li ng-repeat="actor in movieCtrl.movie.actors">{{actor}}</li>
+    </ul>
+    <h4>Genres</h4>
+    <ul>
+      <li ng-repeat="genre in movieCtrl.movie.genres">{{genre}}</li>
+    </ul>
+    <br><br>
+  </div>
+</div>
