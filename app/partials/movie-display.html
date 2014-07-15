@@ -4,11 +4,20 @@
     <aside class="poster-aside">
       <img class="poster" ng-src="{{movieCtrl.movie.poster_link}}">
     </aside>
+    <div class="score-box">
+      <p class="copyright"><strong>Rotten Tomatoes® Scores</strong></p>
+      <div class="scores">
+        <img alt="critic image" class="{{listCtrl.isGoodImg(m.critics_score)}}" ng-src="{{listCtrl.criticsImg(m.critics_score)}}"> {{m.critics_score}}%
+        <span class="math">-</span>
+        <img alt="audience image" class="{{listCtrl.isGoodImg(m.audience_score)}}" ng-src="{{listCtrl.audienceImg(m.audience_score)}}"> {{m.audience_score}}%
+        <span class="math">=</span>
+        <span class="{{listCtrl.calcQuality(movieCtrl.movie)}}">{{movieCtrl.movie.filmetric}}</span>
+      </div>
+    </div>
     <h3>Info</h3>
     <ul>
-      <li>Critics Score: {{movieCtrl.movie.critics_score}}</li>
-      <li>Audience Score: {{movieCtrl.movie.audience_score}}</li>
-      <li>Filmetric: <span class="{{listCtrl.calcQuality(movieCtrl.movie)}}">{{movieCtrl.movie.filmetric}}</span></li>
+      <li>Release Date: {{movieCtrl.movie.release_date | date}}</li>
+      <li>Rating: {{movieCtrl.movie.rating}}</li>
       <li>Director: {{movieCtrl.movie.directors[0]}}</li>
     </ul>
     <h3>Actors</h3>

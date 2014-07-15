@@ -59,10 +59,29 @@
     margin-top: -20px;
   }
 
-    .movie-display .info li {
-      list-style-type: none;
-      margin-left: -25px;
-    }
+  .movie-display .score-box {
+    margin-top: 18px; }
+    .score-box .overview {
+      margin-bottom: 20px; }
+    .score-box .good-rt-img {
+      width: 30px;
+      margin-bottom: 17px; }
+    .score-box .bad-rt-img {
+      width: 40px;
+      margin-bottom: 10px; }
+    .score-box .scores {
+      font-size: 2em; }
+      .score-box .scores p {
+        display: inline-block; }
+      .score-box .scores .filmetric {
+        font-size: 1.25em; }
+      .score-box .scores .math {
+        margin: 0 5px; }
+
+      .movie-display .info li {
+        list-style-type: none;
+        margin-left: -25px;
+      }
 
 /* MOVIE LIST */
 
