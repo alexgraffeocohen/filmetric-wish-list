@@ -46,7 +46,7 @@
 
 .movie-display {
   height: 500px;
-  margin-top: 55px;
+  margin-top: 50px;
 }
 
   .movie-display .poster-aside {
@@ -56,7 +56,7 @@
 
   .movie-display .info {
     margin-left: 100px;
-    margin-top: -25px;
+    margin-top: -20px;
   }
 
     .movie-display .info li {

@@ -3,20 +3,18 @@
     <img class="poster" src="{{movieCtrl.movie.poster_link}}">
   </aside>
   <div class="info">
-    <h2>{{movieCtrl.movie.title}}</h2>
-    <br>
-    <h4>Info</h4>
+    <h3>Info</h3>
     <ul>
-      <li>Critics Score: {{movieCtrl.movie.criticsScore}}</li>
-      <li>Audience Score: {{movieCtrl.movie.audienceScore}}</li>
+      <li>Critics Score: {{movieCtrl.movie.critics_score}}</li>
+      <li>Audience Score: {{movieCtrl.movie.audience_score}}</li>
       <li>Filmetric: {{movieCtrl.movie.filmetric}}</li>
       <li>Director: {{movieCtrl.movie.directors[0]}}</li>
     </ul>
-    <h4>Actors</h4>
+    <h3>Actors</h3>
     <ul>
       <li ng-repeat="actor in movieCtrl.movie.actors">{{actor}}</li>
     </ul>
-    <h4>Genres</h4>
+    <h3>Genres</h3>
     <ul>
       <li ng-repeat="genre in movieCtrl.movie.genres">{{genre}}</li>
     </ul>

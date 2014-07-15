@@ -37,18 +37,6 @@ angular.module('myApp.controllers', [])
       });
     };
     $scope.init();
-    //this.genres = [
-      //{name: 'Action', filmetric: 2},
-      //{name: 'Romance', filmetric: 4},
-      //{name: 'Mystery', filmetrix: 1}
-    //];
-    //this.filmetricEvals = [
-      //[0,"critics like a lot more"],
-      //[1,"critics like more"],
-      //[2,"critics and audiences like equally"],
-      //[3,"audiences like more"],
-      //[4,"audiences like a lot more"]
-    //];
     this.discover = function(evaluationID, genreID){
       searchService.discover(evaluationID, genreID).then(function(movies){
         $scope.options = movies;

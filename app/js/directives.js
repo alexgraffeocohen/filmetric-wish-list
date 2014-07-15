@@ -48,8 +48,9 @@ angular.module('myApp.directives', [])
         };
         this.showMovie = function(movie){
           $('.movie-in-list').hide();
+          $('.page-title').text(movie.title);
+          $('.add-link').hide();
           $scope.visible = true;
-          console.log(movie);
         };
       }],
       controllerAs: 'listCtrl'
