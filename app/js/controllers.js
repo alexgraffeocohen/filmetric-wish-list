@@ -25,7 +25,7 @@ angular.module('myApp.controllers', [])
     }
   }])
   .controller('DiscoverController', [ 'searchService', '$scope', function(searchService, $scope){
-    $scope.options = movies;
+    $scope.options = [];
     $scope.genres = [];
     $scope.filmetricEvals = [];
     $scope.init = function(){

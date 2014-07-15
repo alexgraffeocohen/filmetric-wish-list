@@ -151,7 +151,8 @@ header {
 }
 
 #discover-page #search-box {
-  margin: 40px 5px 20px 5px;
+  margin: 40px 5px 0px 5px;
+  padding-bottom: 20px;
   text-align: center;
 }
 
