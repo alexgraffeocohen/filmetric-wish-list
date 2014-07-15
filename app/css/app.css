@@ -59,7 +59,7 @@
     margin-top: -20px;
   }
 
-  .movie-display .score-box {
+  .score-box {
     margin-top: 18px; }
     .score-box .overview {
       margin-bottom: 20px; }
@@ -179,25 +179,38 @@ header {
 
 /*WISH-LIST*/
 
+#wish-list-page #movie-forms {
+}
+
 #wish-list-page #movie-options {
   margin-top: 10px;
 }
 
-#wish-list-page #movie-options li {
-  list-style-type: none;
-  display: inline-block;
-  margin-left: 10px;
-}
+  #wish-list-page #movie-options li {
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 10px;
+  }
 
 #wish-list-page #movie-preview #preview-poster {
   float: right;
   top: 25px;
 }
 
-#wish-list-page #movie-preview #preview-info li {
-  list-style-type: none;
-  margin-left: -25px;
+#wish-list-page #movie-preview #preview-info {
+  margin-left: 30px;
+  margin-bottom: 100px;
 }
+
+  #wish-list-page #movie-preview #preview-info .preview-title {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  #wish-list-page #movie-preview #preview-info li {
+    list-style-type: none;
+    margin-left: -25px;
+  }
 
 /*DISCOVER PAGE*/
 
