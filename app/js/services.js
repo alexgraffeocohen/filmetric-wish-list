@@ -12,7 +12,6 @@ angular.module('myApp.services', [])
       movieSearch: function(movieTitle){
         var promise = $http.get('http://localhost:3000/searches.json?q=' + movieTitle + '&category=Movie').
           then(function(response){
-            console.log(response);
             return response.data;
           });
         return promise;
@@ -20,7 +19,6 @@ angular.module('myApp.services', [])
       browse: function(){
         var promise = $http.get('http://localhost:3000/movies/browse.json').
           then(function(response){
-            console.log(response);
             return response.data;
           });
         return promise;
@@ -28,7 +26,6 @@ angular.module('myApp.services', [])
       discover: function(evaluationID, genreID){
         var promise = $http.get('http://localhost:3000/movies/discover.json?filmetric_eval=' + evaluationID + '&genre=' + genreID).
           then(function(response){
-            console.log(response);
             return response.data;
           });
         return promise;

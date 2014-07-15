@@ -14,7 +14,7 @@ angular.module('myApp.directives', [])
     return {
       restrict: 'E',
       templateUrl: 'partials/movie-list.html',
-      controller: ['$scope', function($scope){
+      controller: ['$scope', '$location', function($scope, $location){
         this.calcQuality = function(movie){
           var average = (movie.critics_score + movie.audience_score)/2;
           if(average > 75){
@@ -48,10 +48,24 @@ angular.module('myApp.directives', [])
         };
         this.showMovie = function(movie){
           $('.movie-in-list').hide();
+          $('discover-form').hide();
           $('.page-title').text(movie.title);
           $('.add-link').hide();
           $scope.visible = true;
-          console.log(movie);
+        };
+        this.goBack = function(){
+          $scope.visible = false;
+          this.changeBackTitle();
+          $('.add-link').show();
+          $('discover-form').show();
+          $('.movie-in-list').show();
+        };
+        this.changeBackTitle = function(){
+          if($location.path() == '/wish-list'){
+            $('.page-title').text('Wish List');
+          }else if($location.path() == '/discover'){
+            $('.page-title').text('Discover');
+          }
         };
       }],
       controllerAs: 'listCtrl'
@@ -80,7 +94,7 @@ angular.module('myApp.directives', [])
       link: function(scope, elem, attrs) {
         if(attrs.ngClick || attrs.href === '' || attrs.href === '#'){
           elem.on('click', function(e){
-              e.preventDefault();
+            e.preventDefault();
           });
         }
       }
