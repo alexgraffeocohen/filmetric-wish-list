@@ -1,13 +1,14 @@
 <div class="clearfix movie-display">
-  <aside class="poster-aside">
-    <img class="poster" src="{{movieCtrl.movie.poster_link}}">
-  </aside>
   <div class="info">
+    <a class='back-link' href='#/wish-list'>back to list</a>
+    <aside class="poster-aside">
+      <img class="poster" ng-src="{{movieCtrl.movie.poster_link}}">
+    </aside>
     <h3>Info</h3>
     <ul>
       <li>Critics Score: {{movieCtrl.movie.critics_score}}</li>
       <li>Audience Score: {{movieCtrl.movie.audience_score}}</li>
-      <li>Filmetric: {{movieCtrl.movie.filmetric}}</li>
+      <li>Filmetric: <span class="{{listCtrl.calcQuality(movieCtrl.movie)}}">{{movieCtrl.movie.filmetric}}</span></li>
       <li>Director: {{movieCtrl.movie.directors[0]}}</li>
     </ul>
     <h3>Actors</h3>
