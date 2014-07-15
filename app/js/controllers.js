@@ -19,6 +19,7 @@ angular.module('myApp.controllers', [])
     };
     this.selectOption = function(option){
       this.userChoice = option;
+      console.log(option);
     };
     this.addToList = function(movie, list){
      list.push(movie);

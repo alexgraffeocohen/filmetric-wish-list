@@ -24,15 +24,15 @@
         <li>Critics Score: {{searchCtrl.userChoice.critics_score}}</li>
         <li>Audience Score: {{searchCtrl.userChoice.audience_score}}</li>
         <li>Filmetric: {{searchCtrl.userChoice.filmetric}}</li>
-        <li>Director: {{searchCtrl.userChoice.directors[0]}}</li>
+        <li>Director: {{searchCtrl.userChoice.directors[0].name}}</li>
       </ul>
       <h4>Actors</h4>
       <ul>
-        <li ng-repeat="actor in searchCtrl.userChoice.actors">{{actor}}</li>
+        <li ng-repeat="actor in searchCtrl.userChoice.actors">{{actor.name}}</li>
       </ul>
       <h4>Genres</h4>
       <ul>
-        <li ng-repeat="genre in searchCtrl.userChoice.genres">{{genre}}</li>
+        <li ng-repeat="genre in searchCtrl.userChoice.genres">{{genre.name}}</li>
       </ul>
       <br><br>
       <button class="btn btn-primary" id="add-movie-btn" ng-click="searchCtrl.addToList(searchCtrl.userChoice, wishCtrl.movies); wishCtrl.showForm = false">Add Movie</button>
