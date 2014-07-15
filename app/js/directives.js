@@ -14,7 +14,7 @@ angular.module('myApp.directives', [])
     return {
       restrict: 'E',
       templateUrl: 'partials/movie-list.html',
-      controller: function(){
+      controller: ['$scope', function($scope){
         this.calcQuality = function(movie){
           var average = (movie.critics_score + movie.audience_score)/2;
           if(average > 75){
@@ -46,8 +46,23 @@ angular.module('myApp.directives', [])
             return "img/spilled.png";
           }
         };
-      },
+        this.showMovie = function(movie){
+          $('.movie-in-list').hide();
+          $scope.visible = true;
+        };
+      }],
       controllerAs: 'listCtrl'
+    }
+  })
+  .directive('movieDisplay', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'partials/movie-display.html',
+      controller: [ '$scope', function($scope){
+        this.movie = $scope.m;
+        $scope.visible = false;
+      }],
+      controllerAs: 'movieCtrl'
     }
   })
   .directive('discoverForm', function(){

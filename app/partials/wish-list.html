@@ -1,6 +1,8 @@
 <div id="wish-list-page">
-  <h2 class="page-title">Wish List</h2>
-  <a class="add-link" href="" ng-click="wishCtrl.showForm = !wishCtrl.showForm"><h4>{{!wishCtrl.showForm ? "add movie" : "cancel"}}</h4></a>
-  <add-movie-form></add-movie-form>
-  <movie-list ng-repeat="m in wishCtrl.movies"></movie-list>
+  <div id="wish-list-content">
+    <h2 class="page-title">Wish List</h2>
+    <a class="add-link" href="" ng-click="wishCtrl.showForm = !wishCtrl.showForm"><h4>{{!wishCtrl.showForm ? "add movie" : "cancel"}}</h4></a>
+    <add-movie-form></add-movie-form>
+    <movie-list ng-repeat="m in wishCtrl.movies"></movie-list>
+  </div>
 </div>

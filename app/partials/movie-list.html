@@ -1,5 +1,6 @@
-<div class="movie">
-  <a href="{{m.rt_link}}"><img alt="poster" class="poster-thumbnail" ng-src="{{m.poster_link}}"></a>
+<movie-display id='{{movieCtrl.movie.title}}' ng-class='{"hidden": visible == false, "visible": visible == true}'></movie-display>
+<div class="movie-in-list">
+  <a href="" ng-click='listCtrl.showMovie(m)'><img alt="poster" class="poster-thumbnail" ng-src="{{m.poster_link}}"></a>
   <div class="info-box">
     <ul>
       <li><img alt="critic image" class="{{listCtrl.isGoodImg(m.critics_score)}}" src="{{listCtrl.criticsImg(m.critics_score)}}"> {{m.critics_score}}%</li>

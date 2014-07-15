@@ -5,7 +5,18 @@
   background-color: white;
 }
 
-.movie {
+movie-display {
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: visible;
+}
+
+.movie-in-list {
   padding-left: 50px;
   padding-top: 30px;
   height: 300px;
@@ -13,17 +24,17 @@
   float: left;
 }
 
-  .movie .poster-thumbnail {
+  .movie-in-list .poster-thumbnail {
     float: left;
   }
 
-  .movie .info-box {
+  .movie-in-list .info-box {
     margin-top: 50px;
     margin-left: 120px;
     font-size: 1.25em;
   }
 
-    .movie .info-box ul {
+    .movie-in-list .info-box ul {
       list-style-type: none;
     }
 
