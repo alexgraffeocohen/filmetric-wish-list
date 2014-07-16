@@ -13,6 +13,10 @@ angular.module('myApp.controllers', [])
   .controller('SearchMovieCtrl', [ 'searchService', '$scope', function(searchService, $scope){
     this.searchSubmitted = false;
     this.movieTitle = "";
+    this.showAdvOptions = false;
+    this.toggleAdvOptions = function(){
+      this.showAdvOptions = true;
+    };
     this.search = function(form){
       this.userChoice = {};
       searchService.movieSearch(this.movieTitle).then(function(movies){
