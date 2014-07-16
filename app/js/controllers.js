@@ -3,48 +3,44 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-.controller('WishListController', [ '$scope', function($scope){
+.controller('WishListController', [ 'clearService', '$scope', function(clearService, $scope){
   this.movies = movies;
   this.showForm = false;
   this.toggleForm = function(){
+    clearService.clearAll();
     this.showForm = !this.showForm;
   };
   }])
-  .controller('SearchMovieCtrl', [ 'searchService', '$scope', function(searchService, $scope){
+  .controller('SearchMovieCtrl', [ 'searchService', 'clearService', '$scope', function(searchService, clearService, $scope){
+    var controller = this;
+    this.init = function(form){
+      this.options = [];
+      clearService.setContext(this, this.options);
+    };
     this.searchSubmitted = false;
     this.showAdvOptions = false;
     this.movieTitle = "";
     this.actorName = "";
     this.directorName = "";
-    this.clearAll = function(){
-      this.movieTitle = "";
-      this.actorName = "";
-      this.directorName = "";
-      this.userChoice = {};
-      $scope.options = [];
-      this.showAdvOptions = false;
-    };
     this.toggleAdvOptions = function(){
       this.showAdvOptions = !this.showAdvOptions;
     };
     this.search = function(form){
       this.userChoice = {};
       searchService.movieSearch(this.movieTitle, this.actorName, this.directorName).then(function(movies){
-        $scope.options = movies;
+        controller.options = movies;
       });
       this.movieTitle = "";
       this.actorName = "";
       this.directorName = "";
       form.$setPristine();
-      console.log(form);
     };
     this.selectOption = function(option){
       this.userChoice = option;
-      console.log(option);
     };
     this.addToList = function(movie, list){
      list.push(movie);
-     this.clearAll();
+     clearService.clearAll();
     }
   }])
   .controller('DiscoverController', [ 'searchService', '$scope', function(searchService, $scope){

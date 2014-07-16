@@ -6,6 +6,26 @@
 // Demonstrate how to register services
 // In this case it is a simple value service.
 angular.module('myApp.services', [])
+  .service('clearService', function(){
+    var formController;
+    var options;
+    return {
+      setContext: function(controller, scopeOptions){
+        formController = controller;
+        options = scopeOptions;
+      },
+      clearAll: function(){
+        formController.movieTitle = "";
+        formController.actorName = "";
+        formController.directorName = "";
+        formController.userChoice = {};
+        formController.options = [];
+        formController.showAdvOptions = false;
+        formController.searchSubmitted = false;
+        console.log('clearService.clearAll was called!');
+      }
+    };
+  })
   .service('searchService', [ '$http', '$q', function($http){
     var options = [];
     return {
