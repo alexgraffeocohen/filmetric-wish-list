@@ -13,17 +13,21 @@ angular.module('myApp.controllers', [])
   .controller('SearchMovieCtrl', [ 'searchService', '$scope', function(searchService, $scope){
     this.searchSubmitted = false;
     this.movieTitle = "";
+    this.actorName = "";
+    this.directorName = "";
     this.showAdvOptions = false;
     this.toggleAdvOptions = function(){
-      this.showAdvOptions = true;
+      this.showAdvOptions = !this.showAdvOptions;
     };
     this.search = function(form){
       this.userChoice = {};
-      searchService.movieSearch(this.movieTitle).then(function(movies){
+      searchService.movieSearch(this.movieTitle, this.actorName, this.directorName).then(function(movies){
         $scope.options = movies;
       });
       form.$setPristine();
       this.movieTitle = "";
+      this.actorName = "";
+      this.directorName = "";
     };
     this.selectOption = function(option){
       this.userChoice = option;

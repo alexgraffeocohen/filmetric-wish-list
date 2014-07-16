@@ -9,8 +9,14 @@ angular.module('myApp.services', [])
   .service('searchService', [ '$http', '$q', function($http){
     var options = [];
     return {
-      movieSearch: function(movieTitle){
-        var promise = $http.get('http://localhost:3000/searches.json?q=' + movieTitle + '&category=Movie').
+      movieSearch: function(movieTitle, actorName, directorName){
+        var query = 'http://localhost:3000/searches.json?q=' + movieTitle + '&category=Movie'
+        if(actorName != ""){
+          query = query + '&actor=' + actorName;
+        }else if(directorName != ""){
+          query = query + '&director=' +directorName;
+        }
+        var promise = $http.get(query).
           then(function(response){
             return response.data;
           });
