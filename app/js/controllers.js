@@ -3,19 +3,27 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('WishListController', function(){
-    this.movies = movies;
-    this.showForm = false;
-    this.toggleForm = function(){
-      this.showForm = !this.showForm
-    };
-  })
+.controller('WishListController', [ '$scope', function($scope){
+  this.movies = movies;
+  this.showForm = false;
+  this.toggleForm = function(){
+    this.showForm = !this.showForm;
+  };
+  }])
   .controller('SearchMovieCtrl', [ 'searchService', '$scope', function(searchService, $scope){
     this.searchSubmitted = false;
+    this.showAdvOptions = false;
     this.movieTitle = "";
     this.actorName = "";
     this.directorName = "";
-    this.showAdvOptions = false;
+    this.clearAll = function(){
+      this.movieTitle = "";
+      this.actorName = "";
+      this.directorName = "";
+      this.userChoice = {};
+      $scope.options = [];
+      this.showAdvOptions = false;
+    };
     this.toggleAdvOptions = function(){
       this.showAdvOptions = !this.showAdvOptions;
     };
@@ -24,7 +32,6 @@ angular.module('myApp.controllers', [])
       searchService.movieSearch(this.movieTitle, this.actorName, this.directorName).then(function(movies){
         $scope.options = movies;
       });
-      form.$setPristine();
       this.movieTitle = "";
       this.actorName = "";
       this.directorName = "";
@@ -35,6 +42,7 @@ angular.module('myApp.controllers', [])
     };
     this.addToList = function(movie, list){
      list.push(movie);
+     this.clearAll();
     }
   }])
   .controller('DiscoverController', [ 'searchService', '$scope', function(searchService, $scope){

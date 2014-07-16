@@ -1,6 +1,5 @@
 <div id="wish-list-page">
   <h1 class="page-title">Wish List</h1>
-  <a class="add-link" href="" ng-click="wishCtrl.toggleForm()"><h4>{{!wishCtrl.showForm ? "add movie" : "cancel"}}</h4></a>
-  <add-movie-form></add-movie-form>
+  <add-movie-form ng-controller="SearchMovieCtrl as searchCtrl"></add-movie-form>
   <movie-list ng-repeat="m in wishCtrl.movies"></movie-list>
 </div>
