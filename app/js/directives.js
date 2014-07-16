@@ -14,7 +14,7 @@ angular.module('myApp.directives', [])
     return {
       restrict: 'E',
       templateUrl: 'partials/movie-list.html',
-      controller: ['$scope', '$location', function($scope, $location){
+      controller: ['$scope', '$location', 'listService', function($scope, $location, listService){
         this.calcQuality = function(movie){
           var average = (movie.critics_score + movie.audience_score)/2;
           if(average > 75){
@@ -73,6 +73,13 @@ angular.module('myApp.directives', [])
           }else if($location.path() == '/discover'){
             $('.page-title').text('Discover');
           }
+        };
+        this.addToWishList = function(movie){
+          listService.addMovie(movie);
+        };
+        this.isOnWishList = function(movie){
+          var response = listService.onWishList(movie);
+          return response;
         };
       }],
       controllerAs: 'listCtrl'

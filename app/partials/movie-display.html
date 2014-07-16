@@ -1,6 +1,7 @@
 <div class="clearfix movie-display">
   <div class="info">
-    <a class='back-link' href='' ng-click='listCtrl.goBack();'>go back</a>
+    <a class='back-link' href='' ng-click='listCtrl.goBack();'>go back</a><br>
+    <a href='' ng-click='listCtrl.addToWishList(movieCtrl.movie)' ng-hide='listCtrl.isOnWishList(movieCtrl.movie)'>add to list</a>
     <aside class="poster-aside">
       <img class="poster" ng-src="{{movieCtrl.movie.poster_link}}">
     </aside>
