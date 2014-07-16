@@ -179,7 +179,12 @@ header {
 
 /*WISH-LIST*/
 
-#wish-list-page #movie-forms {
+#wish-list-page #advanced-toggle {
+  margin-left: 5px;
+}
+
+#wish-list-page #advanced-options {
+  margin-top: 10px;
 }
 
 #wish-list-page #movie-options {
