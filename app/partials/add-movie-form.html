@@ -1,4 +1,4 @@
-<a class="add-link" href="" ng-click="wishCtrl.toggleForm()"><h4>{{!wishCtrl.showForm ? "add movie" : "cancel"}}</h4></a>
+<a class="add-link" href="" ng-click="wishCtrl.toggleForm(); searchCtrl.clearAll()"><h4>{{!wishCtrl.showForm ? "add movie" : "cancel"}}</h4></a>
 <div id="movie-forms" ng-show="wishCtrl.showForm">
   <form name="searchMovie" id="search-form" ng-submit="searchCtrl.search(searchMovie);">
     <label for="title">Title:</label>

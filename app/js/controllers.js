@@ -35,6 +35,8 @@ angular.module('myApp.controllers', [])
       this.movieTitle = "";
       this.actorName = "";
       this.directorName = "";
+      form.$setPristine();
+      console.log(form);
     };
     this.selectOption = function(option){
       this.userChoice = option;
