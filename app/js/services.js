@@ -31,7 +31,9 @@ angular.module('myApp.services', [])
     return {
       movieSearch: function(movieTitle, actorName, directorName){
         var query = 'http://localhost:3000/searches.json?q=' + movieTitle + '&category=Movie'
-        if(actorName != ""){
+        if(actorName != "" && directorName != ""){
+          query = query + '&actor=' + actorName + '&director=' + directorName;
+        }else if(actorName != ""){
           query = query + '&actor=' + actorName;
         }else if(directorName != ""){
           query = query + '&director=' +directorName;
