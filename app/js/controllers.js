@@ -27,10 +27,16 @@ angular.module('myApp.controllers', [])
     };
     this.search = function(form){
       this.userChoice = {};
-      searchService.movieSearch(this.movieTitle, this.actorName, this.directorName).then(function(movies){
-        controller.options = movies;
-      });
-      this.movieTitle = "";
+      var response = searchService.movieSearch(this.movieTitle, this.actorName, this.directorName);
+      if(response == "No title given"){
+        this.movieTitle = 'please enter a movie';
+      }else{
+        response.then(function(movies){
+          controller.options = movies;
+        });
+        this.movieTitle = "";
+        this.searchSubmitted = true;
+      }
       this.actorName = "";
       this.directorName = "";
       form.$setPristine();
