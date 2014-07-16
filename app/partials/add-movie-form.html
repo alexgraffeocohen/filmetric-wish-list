@@ -12,7 +12,7 @@
     </ul>
   </section>
 
-  <section id="movie-preview" ng-show="searchCtrl.userChoice" class="clearfix">
+  <section id="movie-preview" ng-show="searchCtrl.userChoice.title != null" class="clearfix">
     <aside id="preview-poster" class="col-sm-5">
       <img class="poster" src="{{searchCtrl.userChoice.poster_link}}">
     </aside>

@@ -6,11 +6,15 @@ angular.module('myApp.controllers', [])
   .controller('WishListController', function(){
     this.movies = movies;
     this.showForm = false;
+    this.toggleForm = function(){
+      this.showForm = !this.showForm
+    };
   })
   .controller('SearchMovieCtrl', [ 'searchService', '$scope', function(searchService, $scope){
     this.searchSubmitted = false;
     this.movieTitle = "";
     this.search = function(form){
+      this.userChoice = {};
       searchService.movieSearch(this.movieTitle).then(function(movies){
         $scope.options = movies;
       });
