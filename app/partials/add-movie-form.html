@@ -1,11 +1,11 @@
 <a class="add-link" href="" ng-click="wishCtrl.toggleForm(); searchCtrl.clearAll()"><h4>{{!wishCtrl.showForm ? "add movie" : "cancel"}}</h4></a>
 <div id="movie-forms" ng-show="wishCtrl.showForm">
-  <form name="searchMovie" id="search-form" ng-submit="searchCtrl.search(searchMovie);">
+  <form name="searchMovie" id="search-form" ng-submit="searchCtrl.search(searchMovie);" novalidate>
     <label for="title">Title:</label>
     <input type="text" id="title" autofocus='true' ng-model="searchCtrl.movieTitle">
     <button type="submit" class="btn btn-primary" id="save-movie-btn">Search</button>
     <a href="" id='advanced-toggle' ng-click='searchCtrl.toggleAdvOptions()'>advanced&#9660;</a>
-    <br>
+    <p ng-show='searchCtrl.titleBlank'>title can't be blank!</p>
     <section id='advanced-options' ng-show='searchCtrl.showAdvOptions'>
       <label for="actor">Actor:</label>
       <input type="text" id="actor" ng-model="searchCtrl.actorName">
@@ -15,7 +15,8 @@
     </section>
   </form>
 
-  <section id='movie-options' ng-show="searchCtrl.searchSubmitted">
+  <p ng-show='searchCtrl.searchProcessing'>searching...</p>
+  <section id='movie-options' ng-show="searchCtrl.options">
     <p>Which movie do you want to add?</p>
     <ul id='movie-options'>
       <li ng-repeat='option in searchCtrl.options|limitTo:10'><a href="" ng-click="searchCtrl.selectOption(option)">{{option.title}}</a></li>

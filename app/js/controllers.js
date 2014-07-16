@@ -13,33 +13,36 @@ angular.module('myApp.controllers', [])
   }])
   .controller('SearchMovieCtrl', [ 'searchService', 'clearService', '$scope', function(searchService, clearService, $scope){
     var controller = this;
-    this.init = function(form){
-      this.options = [];
-      clearService.setContext(this, this.options);
-    };
-    this.searchSubmitted = false;
+    this.searchProcessing = false;
     this.showAdvOptions = false;
     this.movieTitle = "";
     this.actorName = "";
     this.directorName = "";
+    this.options = [];
+    this.init = function(form){
+      clearService.setContext(this, this.options);
+    };
     this.toggleAdvOptions = function(){
       this.showAdvOptions = !this.showAdvOptions;
     };
     this.search = function(form){
+      this.searchProcessing = true;
       this.userChoice = {};
-      var response = searchService.movieSearch(this.movieTitle, this.actorName, this.directorName);
-      if(response == "No title given"){
-        this.movieTitle = 'please enter a movie';
-      }else{
-        response.then(function(movies){
+      this.titleBlank = false;
+      if(this.movieTitle.length == 0){
+        this.titleBlank = true;
+        return;
+      }
+      else{
+        searchService.movieSearch(this.movieTitle, this.actorName, this.directorName).then(function(movies){
           controller.options = movies;
+          controller.searchProcessing = false;
         });
         this.movieTitle = "";
-        this.searchSubmitted = true;
+        this.actorName = "";
+        this.directorName = "";
+        form.$setPristine();
       }
-      this.actorName = "";
-      this.directorName = "";
-      form.$setPristine();
     };
     this.selectOption = function(option){
       this.userChoice = option;
