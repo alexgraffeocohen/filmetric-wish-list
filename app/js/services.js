@@ -106,6 +106,10 @@ angular.module('myApp.services', [])
       addMovie: function(movie){
         movies.push(movie);
       },
+      removeMovie: function(movie){
+        var index = movies.indexOf(movie);
+        movies.splice(index, 1);
+      },
       onWishList: function(movie){
         for(var i=0; i < movies.length; i++){
           if(movies[i] == movie){

@@ -81,6 +81,10 @@ angular.module('myApp.directives', [])
           var response = listService.onWishList(movie);
           return response;
         };
+        this.removeFromWishList = function(movie){
+          listService.removeMovie(movie);
+          this.goBack();
+        };
       }],
       controllerAs: 'listCtrl'
     }

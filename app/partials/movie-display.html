@@ -2,6 +2,7 @@
   <div class="info">
     <a class='back-link' href='' ng-click='listCtrl.goBack();'>go back</a><br>
     <a href='' ng-click='listCtrl.addToWishList(movieCtrl.movie)' ng-hide='listCtrl.isOnWishList(movieCtrl.movie)'>add to list</a>
+    <a href='' ng-click='listCtrl.removeFromWishList(movieCtrl.movie)' ng-show='listCtrl.isOnWishList(movieCtrl.movie)'>remove from list</a>
     <aside class="poster-aside">
       <img class="poster" ng-src="{{movieCtrl.movie.poster_link}}">
     </aside>
